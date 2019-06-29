@@ -15,6 +15,14 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var resetButton: UIButton!
     
+    @IBOutlet weak var timeLabel: UILabel!
+    
+    
+    var startTime = Double(-1)
+    var timer = Timer()
+    var isRunning:Bool = false
+    var theString = ""
+    var labelText = "00:00:00"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +38,69 @@ class ViewController: UIViewController {
         resetButton.layer.cornerRadius = 50
         
     }
-
+    
+    
+    @IBAction func startButtonPush(_ sender: Any) {
+        
+        //if in the timerloop
+        if(isRunning) {
+            //mark as false meaining we pushed after starting/stoping first time
+            isRunning = false;
+            timer.invalidate()
+            //get time after stopping so we can resume
+            labelText = timeLabel.text!
+        } else {
+            startTime = Date.timeIntervalSinceReferenceDate
+            //call tick() every 0.01 sec
+            timer = Timer.scheduledTimer(timeInterval: 0.01 , target: self,
+                                         selector:#selector(self.tick), userInfo: nil, repeats: true)
+        }
+        
+    }
+    
+    
+    @IBAction func resetButtonPush(_ sender: Any) {
+        timer.invalidate()
+        timeLabel.text = "00:00:00"
+        isRunning = false
+        theString = ""
+        labelText = "00:00:00"
+    }
+    
+    @objc func tick() {
+        
+        let currentTime = Date.timeIntervalSinceReferenceDate
+        let update = currentTime - startTime
+        let updateString = String(format:"%.02f", update)
+        
+        //get the deciseconds, seconds and minutes
+        let initTimeArr = updateString.components(separatedBy: ".")
+        var fracSec = Int(initTimeArr[1])!
+        var sec = Int(initTimeArr[0])! % 60
+        var minutes = Int(initTimeArr[0])! / 60
+        
+        //add the previous label (adding 0s if first time)
+        let prevTimeArr = labelText.components(separatedBy: ":")
+        fracSec += Int(prevTimeArr[2])!
+        //sec += sec + overflow deciseconds
+        sec = sec + Int(prevTimeArr[1])! + fracSec/100
+        //minutes += minutes + overflow seconds
+        minutes = minutes + Int(prevTimeArr[0])! + sec/60
+        //truncate seconds and fracSec
+        fracSec = fracSec % 100
+        sec = sec % 60
+        
+        //format and update label
+        theString = String(format:"%02d", minutes) + ":" +
+            String(format:"%02d",sec) + ":" + String(format:"%02d", fracSec)
+        timeLabel.text = theString
+        
+        //change boolean
+        if(!isRunning) {
+            isRunning = true
+        }
+    }
+    
 
 }
 

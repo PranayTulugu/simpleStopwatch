@@ -22,8 +22,8 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DEv-kz-jky">
-                                <rect key="frame" x="55.5" y="393" width="303" height="110"/>
-                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="78"/>
+                                <rect key="frame" x="68.5" y="405" width="277.5" height="86.5"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="78"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -33,7 +33,7 @@
                                     <constraint firstAttribute="height" constant="100" id="Dgf-FG-WGo"/>
                                     <constraint firstAttribute="width" constant="100" id="bXm-Ih-Hlf"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="25"/>
                                 <state key="normal" title="Reset">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -47,7 +47,7 @@
                                     <constraint firstAttribute="height" constant="100" id="0m3-Kb-ywK"/>
                                     <constraint firstAttribute="width" constant="100" id="ASJ-71-OqR"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="25"/>
                                 <state key="normal" title="Start">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -55,16 +55,24 @@
                                     <action selector="startButtonPush:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yh3-4h-T0P"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stopwatch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PlY-hK-g9f">
+                                <rect key="frame" x="140" y="74" width="134" height="40"/>
+                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="28"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ypB-5x-fV0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="9I6-No-vAi"/>
+                            <constraint firstItem="PlY-hK-g9f" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Cgv-9i-Gmd"/>
                             <constraint firstItem="q4z-Ap-FBi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="Cjc-bK-zli"/>
                             <constraint firstItem="ypB-5x-fV0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="L1X-Tc-4bY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="q4z-Ap-FBi" secondAttribute="bottom" constant="50" id="OIw-8J-391"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ypB-5x-fV0" secondAttribute="trailing" id="Q2R-9W-OkC"/>
                             <constraint firstItem="DEv-kz-jky" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="VW3-Lk-k3U"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="HPu-40-iNL" secondAttribute="bottom" constant="50" id="aKF-yJ-aRG"/>
+                            <constraint firstItem="PlY-hK-g9f" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="pod-Yb-7fu"/>
                             <constraint firstItem="DEv-kz-jky" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="t1G-Zf-pEd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HPu-40-iNL" secondAttribute="trailing" constant="50" id="u6J-cT-jPQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ypB-5x-fV0" secondAttribute="bottom" id="xqJ-02-iV7"/>
@@ -79,7 +87,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="40.799999999999997" y="25.637181409295355"/>
+            <point key="canvasLocation" x="40.579710144927539" y="25.446428571428569"/>
         </scene>
     </scenes>
     <resources>

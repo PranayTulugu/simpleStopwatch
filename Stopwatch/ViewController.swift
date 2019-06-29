@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var timeLabel: UILabel!
     
-    
+    //initialization of variables
     var startTime = Double(-1)
     var timer = Timer()
     var isRunning:Bool = false
@@ -26,8 +26,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
+        //add white circle around the buttons
         startButton.layer.borderWidth = 1
         let white = UIColor.init(white: 1, alpha: 1)
         startButton.layer.borderColor = white.cgColor

@@ -45,11 +45,13 @@ class ViewController: UIViewController {
         //if in the timerloop
         if(isRunning) {
             //mark as false meaining we pushed after starting/stoping first time
+            startButton.setTitle("Start", for: .normal)
             isRunning = false;
             timer.invalidate()
             //get time after stopping so we can resume
             labelText = timeLabel.text!
         } else {
+            startButton.setTitle("Stop", for: .normal)
             startTime = Date.timeIntervalSinceReferenceDate
             //call tick() every 0.01 sec
             timer = Timer.scheduledTimer(timeInterval: 0.01 , target: self,
@@ -60,6 +62,7 @@ class ViewController: UIViewController {
     
     
     @IBAction func resetButtonPush(_ sender: Any) {
+        startButton.setTitle("Start", for: .normal)
         timer.invalidate()
         timeLabel.text = "00:00:00"
         isRunning = false
